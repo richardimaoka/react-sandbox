@@ -4,10 +4,12 @@ interface GreetingProps {
   name: string;
 }
 
-const Greeting = memo(function Greeting({ name }: GreetingProps) {
+function Greeting({ name }: GreetingProps) {
   console.log("rendering greeting");
   return <h1>Hello, {name}!</h1>;
-});
+}
+
+const GreetingMemo = memo(Greeting);
 
 function App() {
   const [generation, setGeneration] = useState(1);
@@ -19,6 +21,7 @@ function App() {
   return (
     <div>
       <Greeting name={ozakiName} />
+      <GreetingMemo name={ozakiName} />
       <button type="button" onClick={nextGen}>
         born
       </button>
