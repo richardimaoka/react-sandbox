@@ -1,17 +1,17 @@
+import { memo } from "react";
+
+interface GreetingProps {
+  name: string;
+}
+
+const Greeting = memo(function Greeting({ name }: GreetingProps) {
+  return <h1>Hello, {name}!</h1>;
+});
+
 function App() {
   return (
-    <div
-      style={{
-        backgroundColor: "black",
-        display: "flex",
-        justifyContent: "space-between",
-        color: "white",
-      }}
-    >
-      <div>AWS</div>
-      <div>search in this guide</div>
-      <div>English</div>
-      <div>Sign in to the console</div>
+    <div>
+      <Greeting name="ozaki zakio" />
     </div>
   );
 }
